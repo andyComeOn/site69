@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="http://139.199.23.2/img/favicon/sql.png">
+
+    <title>mysql的常见指令</title>
+    <style>
+        th {
+            text-align: left;
+        }
+
+        h3 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap" style="margin: 10px auto;">
+        <h3>数据库的操作指令</h3>
+
+        <table border="1" cellspacing="0" cellpadding="3" width="100%">
+            <tr>
+                <th>指令名称</th>
+                <th>指令详情</th>
+                <th>指令名称</th>
+                <th>指令详情</th>
+            </tr>
+            <tr>
+                <td>查看所有数据库</td>
+                <td>show databases;</td>
+                <td>创建新数据库</td>
+                <td>create database `name`;</td>
+            </tr>
+
+            <tr>
+                <td>查看可用的字符集</td>
+                <td>show charset;</td>
+                <td>查看可用的校对规则</td>
+                <td>show collation;</td>
+            </tr>
+            <tr>
+                <td>查看数据库创建信息</td>
+                <td>show create database `name`;</td>
+                <td>删除现有数据库</td>
+                <td>drop database `name`;</td>
+            </tr>
+
+            <tr>
+                <td>修改数据库的字符编码或校对规则</td>
+                <td>alter database `name` charset 新的字符集名称 collate 新的校对规则名;</td>
+                <td>选择(使用)某个数据库</td>
+                <td>use `name`;</td>
+            </tr>
+        </table>
+
+
+
+        <h3>数据库表的操作指令</h3>
+        <table border="1" cellspacing="0" cellpadding="3" width="100%">
+            <tr>
+                <th>指令名称</th>
+                <th>指令详情</th>
+                <th>指令名称</th>
+                <th>指令详情</th>
+            </tr>
+            <tr>
+                <td>查看所有表(前提已经切换具体的某个数据库)</td>
+                <td>show tables;</td>
+                <td>创建表</td>
+                <td>create table `表name` (字段1 数据类型, 字段2 数据类型, 字段3 数据类型);</td>
+            </tr>
+
+            <tr>
+                <td>字符集包括</td>
+                <td>utf, gbk, gb2312, big5;</td>
+                <td>表类型包括</td>
+                <td>nnoDB, MyIsam, BDB 默认是InnoDB</td>
+            </tr>
+            <tr>
+                <td>查看表结构</td>
+                <td>desc `name`;</td>
+                <td>查看表的创建语句</td>
+                <td>show create table `name`;</td>
+            </tr>
+
+            <tr>
+                <td>删除表</td>
+                <td>drop table `name`;</td>
+                <td>表-添加字段</td>
+                <td>alter table `name` add 字段名 字段类型 [字段属性...(eg: default 0)] [after 某字段名 或first];</td>
+            </tr>
+
+            <tr>
+                <td>表-修改字段</td>
+                <td>alter table `name` change 旧字段名 新字段名 新字段类型 [字段属性...];</td>
+                <td>表-修改字段(仅修改字段的其他信息，则可以使用)</td>
+                <td>alter table `name` modify 要修改字段名 字段类型 [字段属性...];</td>
+            </tr>
+
+            <tr>
+                <td>表-删除字段</td>
+                <td>alter table `name` drop 字段名;</td>
+                <td>表-修改表名</td>
+                <td>alter table `name` rename 新表名;</td>
+            </tr>
+            <tr>
+                <td>表-修改其字符集</td>
+                <td>alter table `name` charset=新字符集;</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <h3>数据库-数据操作初步</h3>
+        <table border="1" cellspacing="0" cellpadding="3" width="100%">
+            <tr>
+                <th>指令名称</th>
+                <th>指令详情</th>
+                <th>指令名称</th>
+                <th>指令详情</th>
+            </tr>
+            <tr>
+                <td>数据基本4种操作</td>
+                <td>增(insert), 删(delete),改(update), 查(select);</td>
+                <td>数据基本4种操作，也称：CRUD操作</td>
+                <td>Create(创建), Retrieve(获取), Update(更新), Delete(删除);</td>
+            </tr>
+            <tr>
+                <td>插入数据</td>
+                <td>insert into 表名 (字段名1， 字段名2， ... ) values (数据1， 数据2， ... );</td>
+                <td>*字段名和数据是“一一对应”，对要写入的数据str、时间日期类型，用单引号引住</td>
+                <td>可省略“字段列表”部分，但需给出跟字段数量一样多的数据(通俗说就是位数对齐) eg: insert into 表名 (id) values (1) 都是1位</td>
+            </tr>
+            <tr>
+                <td>删除数据</td>
+                <td>delete from 表名 [where 条件];</td>
+                <td>*删除数据指的是删除表的某些行，比如原来有10行，可以将其中的3行删除，则剩下7行</td>
+                <td>where条件表示删除数据所应满足的条件，含义跟select一样。注：where 条件可不写，若不写，则会删除所有数据-通常都不会这么用</td>
+            </tr>
+            <tr>
+                <td>修改数据</td>
+                <td>update 表名 set 字段名1=新值1, 字段名2=新值2 [where 条件];</td>
+                <td>查询数据</td>
+                <td>select 字段列表 from 表名 where 条件</td>
+            </tr>
+        </table>
+        <h3>MySQL数据类型</h3>
+        <div style="text-align: center;"><img style="max-width: 100%;" src="http://139.199.23.2/img/collage/mysql-data-type.jpg" alt=""></div>
+        <table border="1" cellspacing="0" cellpadding="3" width="100%">
+            <tr>
+                <th>指令名称</th>
+                <th>指令详情</th>
+                <th>指令名称</th>
+                <th>指令详情</th>
+            </tr>
+            <tr>
+                <td>数据类型，总体分3大类</td>
+                <td>数字型、时间型、字符型</td>
+                <td>整型</td>
+                <td>tinyint：微整型、smallint：小整型、 mediumint：中整型、int：整型、bigint：大整型</td>
+            </tr>
+            
+        </table>
+        <div style="text-align: center;">
+            <p><a href="https://www.cnblogs.com/owenma/p/7097602.html">MySQL数据类型DECIMAL用法</a></p>
+            <p><a href="https://blog.csdn.net/u010002184/article/details/79238624">Mysql decimal(m,d)的说明</a></p>
+             
+            
+        </div>
+    </div>
+</body>
+
+</html>
