@@ -13,7 +13,8 @@
 
 <body>
     <?php
-        echo "<img src='http://139.199.23.2/img/favicon/study.png'/>";
+echo '<img src="http://139.199.23.2/img/favicon/study.png"/>';
+echo "123";
        
     ?>
 </body>
