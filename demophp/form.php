@@ -1,7 +1,6 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,22 +12,24 @@
 
 <body>
     <?php
-        if (isset($_POST)) {
-            print_r($_POST);
-        }
-       
-         
+    if (isset($_POST)) {
+        print_r($_POST);
+    }
+
+    
+   
     ?>
 
     <h3>快速测试PHP</h3>
     <form method="post" action="">
-        <div> <input name="username" type="text" value=""/> </div>
-        <div> 
-            <input name="hobby[]" type="checkbox" value="读书"/> 读书
-            <input name="hobby[]" type="checkbox" value="看报"/> 看报
-            <input name="hobby[]" type="checkbox" value="游泳"/> 游泳
+        <div> <input name="username" type="text" value="" /> </div>
+        <div>
+            <input name="hobby[]" type="checkbox" value="读书" /> 读书
+            <input name="hobby[]" type="checkbox" value="看报" /> 看报
+            <input name="hobby[]" type="checkbox" value="游泳" /> 游泳
         </div>
         <div> <input type="submit" /> </div>
     </form>
 </body>
+
 </html>
