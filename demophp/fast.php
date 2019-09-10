@@ -1,7 +1,6 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,10 +12,27 @@
 
 <body>
     <?php
-        echo '快速测试PHP<br>';
-        $v = 'hello';
-        echo "{$v}";
-        // print_r("年后$v");
+    echo '快速测试PHP<br>';
+    $v = 'hello';
+    echo "{$v}<br>";
+
+    // $a = 0;
+    // print_r(isset($a));
+    // print_r("年后$v");
+
+
+
+    function setName($obj)
+    {
+        $obj->name = 'Xavier';
+        $obj = new stdClass;
+        $obj->name = 'Zhao';
+    }
+
+    $person = new stdClass;
+    setName($person);
+    var_dump($person->name);
     ?>
 </body>
+
 </html>

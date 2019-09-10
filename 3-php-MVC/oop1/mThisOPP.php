@@ -26,6 +26,7 @@
             return 'demo';
         }
         
+        
         public function showInfo()
         {
             $str = $this->name . '的基本信息';
