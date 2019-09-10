@@ -13,8 +13,15 @@
 
 <body>
     <?php
-echo '<img src="http://139.199.23.2/img/favicon/study.png"/>';
-echo "123";
+        echo '<img src="http://139.199.23.2/img/favicon/study.png"/><br>';
+        $arr = array(120, 121, 122);
+        foreach ($arr as $i => $v) {
+            if ($i == 1) {
+                echo '第' . ($i + 1) . "个特殊的值是{$v}<br>"; 
+                continue;
+            }
+            echo '第' . ($i + 1) . "个值是{$v}<br>"; 
+        }
        
     ?>
 </body>
