@@ -73,10 +73,13 @@
         // print_r($arr);
 
 
-        // 从结果集中所有行作为关联数组，或数字数组，或二者兼有(具体看配置参数，默认是枚举数组)
-        // $arr = mysqli_fetch_all($result, MYSQLI_ASSOC);
-        // print_r($arr);
-        echo "共有{$sql}个员工";
+        // 从结果集中所有行 ALL 作为关联数组，或数字数组，或二者兼有(具体看配置参数，默认是枚举数组)
+        $arr = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        print_r($arr);
+
+
+        mysqli_close($link);
+        // echo "共有{$sql}个员工";
         
 
 
