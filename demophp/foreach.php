@@ -35,16 +35,16 @@
         echo '<p>' . $val['name'] . $val['age'] . $val['sex'] . "</p><br>";
     }
     
-    echo '<tr>' . 
-        '<td>' . $arr['id'] . '</td>' .
-        '<td>' . $arr['name'] . '</td>' . 
-        '<td>' . $arr['sex'] . '</td>' .
-        '<td>' . "$arr['height']" . '</td>' .
-        '<td>' . $arr['age'] . '</td>' .
-        '<td>' . $arr['edu'] . '</td>' .
-        '<td>' . $arr['hobby'] . '</td>' .
-        '<td>' . $arr['province'] . '</td>' .
-        '</tr>'; 
+    // echo '<tr>' . 
+    //     '<td>' . $arr['id'] . '</td>' .
+    //     '<td>' . $arr['name'] . '</td>' . 
+    //     '<td>' . $arr['sex'] . '</td>' .
+    //     '<td>' . "$arr['height']" . '</td>' .
+    //     '<td>' . $arr['age'] . '</td>' .
+    //     '<td>' . $arr['edu'] . '</td>' .
+    //     '<td>' . $arr['hobby'] . '</td>' .
+    //     '<td>' . $arr['province'] . '</td>' .
+    //     '</tr>'; 
 
     ?>
 </body>
