@@ -1,7 +1,7 @@
 <?php
 
 // 定义最终的新闻类控制器
-final class NewsController extends BaseContrller {
+final class NewsController extends BaseController {
     // 定义公共的删除方法
     public function delete() {
         $modelObj = FactoryModel::getInstance("NewsModel");

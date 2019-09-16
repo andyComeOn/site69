@@ -8,6 +8,13 @@ define('PLAT', $p);
 
 require_once('./Frame/common.css.php');
 
+define("DS", DIRECTORY_SEPARATOR);
+define("ROOT_PATH", getcwd().DS);
+echo ROOT_PATH;
+
+
+die();
+
 // 类的自动加载
 spl_autoload_register(function ($className) {
     // 类文件路径数组

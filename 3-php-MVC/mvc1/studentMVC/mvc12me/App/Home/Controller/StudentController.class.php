@@ -1,7 +1,7 @@
 <?php
 
 // 定义最终的学生控制器类
-final class StudentController extends BaseContrller {
+final class StudentController extends BaseController {
     
     protected $modelObj;
     
