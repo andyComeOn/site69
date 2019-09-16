@@ -3,7 +3,7 @@
 require_once('./Db.class.php');
 
 // 定义学生模型类
-class StudentModel {
+class NewsModel {
     private $db = null;
 
     // 构造方法

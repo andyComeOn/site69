@@ -69,6 +69,7 @@
         // print_r($arr["age"]);
 
         // 从结果集中取得一行作为关联数组，或数字数组，或二者兼有(具体看配置参数，默认是MYSQLI_BOTH)
+        // 仅仅是查找到第一条数据（不论是正序还是倒序都是这个结果集的第一条数据）
         // $arr = mysqli_fetch_array($result, MYSQLI_ASSOC);
         // print_r($arr);
 

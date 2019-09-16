@@ -20,24 +20,21 @@
 </head>
 
 <body>
-    <div style="text-align: center">
-        <a href="./StudentController.php">学生管理</a> |
-        <a href="./NewsController.php">新闻管理</a>
+    <div class="nav">
+        <a href="?c=Student">学生管理</a> |
+        <a href="?c=News">新闻管理</a>
     </div>
 
     <h2 style="text-align: center;">MVC实例：学生信息管理-展示学生信息列表</h2>
-    <?php
-    // echo $arrs;
-    // print_r($arrs);
-    ?>
-
+    <h2 style="text-align: center;"><a href="?a=add&c=Student">添加学生</a><span>共有5个学生</span>  </h2>
+    
     <script>
         // 删除操作函数
         // ac是action的简写，代表用户操作
         // "?"之前省略了当前控制器文件名StudentController.php
         function confirmDel(id) {
             if (window.confirm('真的要删除吗？')) {
-                window.location.href = "?ac=delete&id=" + id;
+                window.location.href = "?a=delete&c=Student&id=" + id;
             }
         }
     </script>

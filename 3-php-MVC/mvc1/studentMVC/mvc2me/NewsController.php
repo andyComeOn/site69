@@ -1,8 +1,8 @@
 <?php
-require_once('./StudentModel.class.php');
+require_once('./NewsModel.class.php');
 
 // 创建一个学生类对象
-$modelObj = new StudentModel();
+$modelObj = new NewsModel();
 
 // 获取用户动作
 $ac = isset($_GET['ac']) ? $_GET['ac'] : '';
@@ -25,5 +25,5 @@ if ($ac == 'delete') {
     $arrs = $modelObj->fetchAll();
 
     // 引入视图文件
-    include './studentView.php';
+    include './newsView.php';
 }

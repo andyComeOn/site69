@@ -21,8 +21,8 @@
 
 <body>
     <div style="text-align: center">
-        <a href="./StudentController.php">学生管理</a> |
-        <a href="./NewsController.php">新闻管理</a>
+        <a href="./StudentController.class.php">学生管理</a> |
+        <a href="./NewsController.class.php">新闻管理</a>
     </div>
 
     <h2 style="text-align: center;">MVC实例：学生信息管理-展示学生信息列表</h2>

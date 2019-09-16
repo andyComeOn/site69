@@ -14,6 +14,15 @@
     <?php
     echo '快速测试PHP，Hello World<br>';
     
+    $a = 2;
+
+    if ($a > 3) {
+        echo '大于3';
+    } elseif ($a > 1) {
+        echo '大于1++-';
+    } else {
+        echo 'xiao于1';
+    }
    
 
 
