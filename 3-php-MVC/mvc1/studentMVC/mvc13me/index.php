@@ -20,7 +20,7 @@ spl_autoload_register(function ($className) {
     foreach ($arr as $filename) {
         // 如果类文件路径存在，则包含
         if (file_exists($filename)) {
-            // echo $filename . '<br>';
+            echo $filename . '<br>';
             require_once($filename);
         }
     }

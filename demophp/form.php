@@ -16,12 +16,16 @@
         print_r($_POST);
     }
 
+    if (isset($_GET)) {
+        print_r($_GET);
+    }
+
     
    
     ?>
 
     <h3>快速测试PHP</h3>
-    <form method="post" action="">
+    <form method="GET" action="">
         <div> <input name="username" type="text" value="" /> </div>
         <div>
             <input name="hobby[]" type="checkbox" value="读书" /> 读书
