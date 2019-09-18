@@ -12,12 +12,12 @@ class Db {
     private $link;
     
     // 私有的构造方法，阻止类外new对象
-    private function __construct($config = array()) {
-        $this->db_host = $config['db_host'];
-        $this->db_user = $config['db_user'];
-        $this->db_pwd = $config['db_pwd'];
-        $this->db_name = $config['db_name'];
-        $this->charset = $config['charset'];
+    private function __construct() {
+        $this->db_host = $GLOBALS['config']['db_host'];
+        $this->db_user = $GLOBALS['config']['db_user'];
+        $this->db_pwd = $GLOBALS['config']['db_pwd'];
+        $this->db_name = $GLOBALS['config']['db_name'];
+        $this->charset = $GLOBALS['config']['charset'];
 
         $this->connectDb(); // 连接服务器
         $this->selectDb(); // 选择数据库
@@ -30,11 +30,11 @@ class Db {
     }
 
     // 公共静态创建对象方法
-    public static function getInstance($config = array()) {
+    public static function getInstance() {
         // 判断当前对象是否存在
         if (!self::$obj instanceof self) {
             // 不存在，创建并保存它
-            self::$obj = new self($config);
+            self::$obj = new self();
         }
         // 抛出对象
         return self::$obj;

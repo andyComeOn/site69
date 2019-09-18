@@ -19,6 +19,6 @@ abstract class BaseModel {
         );
 
         // 把引入的Db的成员方法执行之后赋值给私有的db
-        $this->db = Db::getInstance($arr);
+        $this->db = Db::getInstance();
     }
 }
