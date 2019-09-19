@@ -45,7 +45,7 @@ final class Frame
     {
         //类的自动加载
         spl_autoload_register(function ($className) {
-            //类文件路径数组
+            // 类文件路径数组，与顺序无关
             $arr = array(
                 FRAME_PATH . "$className.class.php",
                 MODEL_PATH . "$className.class.php",
