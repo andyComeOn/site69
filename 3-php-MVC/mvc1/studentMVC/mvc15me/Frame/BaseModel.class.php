@@ -10,13 +10,13 @@ abstract class BaseModel {
     
     // 构造方法
     public function __construct() {
-        $arr = array(
-            'db_host' => 'localhost',
-            'db_user' => 'root',
-            'db_pwd' => '123456',
-            'db_name' => 'itcast',
-            'charset' => 'utf8'
-        );
+        // $arr = array(
+        //     'db_host' => 'localhost',
+        //     'db_user' => 'root',
+        //     'db_pwd' => '123456',
+        //     'db_name' => 'itcast',
+        //     'charset' => 'utf8'
+        // );
 
         // 把引入的Db的成员方法执行之后赋值给私有的db
         $this->db = Db::getInstance();
