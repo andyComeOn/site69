@@ -7,7 +7,7 @@ use \Frame\Vendor\Smarty;
 abstract class BaseController
 {
 	//受保护的Smarty对象属性
-	protected $smarty = null;
+	protected $smarty;
 	//构造方法：初始化Smarty对象
 	public function __construct()
 	{

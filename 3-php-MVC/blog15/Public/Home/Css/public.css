@@ -30,8 +30,8 @@ a:hover{color:red;text-decoration:underline;}
 	background-image: url("../images/sinablogb.jpg");
 	background-position: center top;
     background-repeat: no-repeat;
-    clear: both;
-    width: 100%;
+    /* clear: both; */
+    /* width: 100%; */
 	height:335px;
 }
 .blogbg .header{width:950px;margin:0px auto;height:267px;}

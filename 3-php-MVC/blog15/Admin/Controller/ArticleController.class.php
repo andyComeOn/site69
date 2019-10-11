@@ -1,5 +1,7 @@
 <?php
+
 namespace Admin\Controller;
+
 use \Frame\Libs\BaseController;
 use \Admin\Model\CategoryModel;
 use \Admin\Model\ArticleModel;
@@ -17,15 +19,15 @@ final class ArticleController extends BaseController
 		$categorys = $categoryModelObj->categoryList($categorys);
 		//查询条件
 		$where = "2>1";
-		if(!empty($_POST['category_id']))
-			$where .= " AND category_id=".$_POST['category_id'];
-		if(!empty($_POST['keyword']))
-			$where .= " AND title like '%".$_POST['keyword']."%'";
+		if (!empty($_POST['category_id']))
+			$where .= " AND category_id=" . $_POST['category_id'];
+		if (!empty($_POST['keyword']))
+			$where .= " AND title like '%" . $_POST['keyword'] . "%'";
 
 		//分页参数
 		$pagesize = 10;
 		$page = isset($_GET['page']) ? $_GET['page'] : 1;
-		$startrow = ($page-1)*$pagesize;
+		$startrow = ($page - 1) * $pagesize;
 		$records = ArticleModel::getInstance()->rowCount($where);
 
 		//获取分页代码
@@ -33,13 +35,13 @@ final class ArticleController extends BaseController
 			'c'	=> 'Article',
 			'a'	=> 'index',
 		);
-		$pageObj = new Pager($records,$pagesize,$page,$params);
+		$pageObj = new Pager($records, $pagesize, $page, $params);
 		$pageStr = $pageObj->showPage();
 
 		//获取分页文章数据
 		$articleModelObj = ArticleModel::getInstance();
 		$orderby = "id desc";
-		$articles = $articleModelObj->fetchAllWithJoin($where,$orderby,$startrow,$pagesize);
+		$articles = $articleModelObj->fetchAllWithJoin($where, $orderby, $startrow, $pagesize);
 
 		//向模板赋值，并调用视图显示
 		$this->smarty->assign(array(
@@ -59,7 +61,7 @@ final class ArticleController extends BaseController
 		$categorys = $categoryModelObj->fetchAll();
 		$categorys = $categoryModelObj->categoryList($categorys);
 		//向模板赋值，并调用视图显示
-		$this->smarty->assign("categorys",$categorys);
+		$this->smarty->assign("categorys", $categorys);
 		$this->smarty->display("Article/add.html");
 	}
 
@@ -71,9 +73,9 @@ final class ArticleController extends BaseController
 		$data['user_id']		= $_SESSION['uid'];
 		$data['title']			= $_POST['title'];
 		$data['orderby']		= $_POST['orderby'];
-		if(isset($_POST['top'])){
+		if (isset($_POST['top'])) {
 			$data['top'] = 1;
-		}else{
+		} else {
 			$data['top'] = 0;
 		}
 		$data['content']		= $_POST['content'];
@@ -81,7 +83,7 @@ final class ArticleController extends BaseController
 		//调用模型类对象写入数据
 		ArticleModel::getInstance()->insert($data);
 		//跳转到列表页
-		$this->jump("文章添加成功！","?c=Article");
+		$this->jump("文章添加成功！", "?c=Article");
 	}
 
 	//编辑文章
@@ -112,23 +114,23 @@ final class ArticleController extends BaseController
 		$data['category_id']	= $_POST['category_id'];
 		$data['title']			= $_POST['title'];
 		$data['orderby']		= $_POST['orderby'];
-		if(isset($_POST['top'])){
+		if (isset($_POST['top'])) {
 			$data['top'] = 1;
-		}else{
+		} else {
 			$data['top'] = 0;
 		}
 		$data['content']		= $_POST['content'];
 		//调用模型类对象的更新方法
-		ArticleModel::getInstance()->update($data,$id);
+		ArticleModel::getInstance()->update($data, $id);
 		//跳转到列表页
-		$this->jump("id={$id}的记录更新成功！","?c=Article");
+		$this->jump("id={$id}的记录更新成功！", "?c=Article");
 	}
 
-//删除文章
-public function delete()
-{
-	$id = $_GET['id'];
-	ArticleModel::getInstance()->delete($id);
-	$this->jump("id={$id}的记录删除成功！","?c=Article");
-}
+	//删除文章
+	public function delete()
+	{
+		$id = $_GET['id'];
+		ArticleModel::getInstance()->delete($id);
+		$this->jump("id={$id}的记录删除成功！", "?c=Article");
+	}
 }

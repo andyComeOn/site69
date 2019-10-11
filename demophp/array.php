@@ -15,6 +15,7 @@
     <?php
        
         $arrs = array('andy', 'jim', 'tom');
+        print_r($arrs);
         foreach($arrs as $v) {
             echo $v . '<br>';
         }

@@ -12,20 +12,24 @@
 
 <body>
     <?php
-    if (isset($_POST)) {
+    if (isset($_POST) && !empty($_POST)) {
         print_r($_POST);
     }
 
-    if (isset($_GET)) {
+    echo '--';
+
+    if (isset($_GET) && !empty($_GET)) {
         print_r($_GET);
     }
 
-    
-   
+    $arr = array(0 => 123);
+    print empty($arr);
+
+
     ?>
 
     <h3>快速测试PHP</h3>
-    <form method="GET" action="">
+    <form method="post" action="">
         <div> <input name="username" type="text" value="" /> </div>
         <div>
             <input name="hobby[]" type="checkbox" value="读书" /> 读书
