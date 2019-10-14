@@ -1,5 +1,7 @@
 <?php
+
 namespace Admin\Controller;
+
 use \Frame\Libs\BaseController;
 //定义IndexController控制器类
 final class IndexController extends BaseController
@@ -39,4 +41,3 @@ final class IndexController extends BaseController
 		$this->smarty->display("Index/main.html");
 	}
 }
-
