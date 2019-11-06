@@ -31,11 +31,17 @@ class Db {
 
     // 公共静态创建对象方法
     public static function getInstance() {
+        var_dump(self::$obj instanceof self);
         // 判断当前对象是否存在
         if (!self::$obj instanceof self) {
             // 不存在，创建并保存它
             self::$obj = new self();
+
+            print_r(2898);
+            die;
         }
+        print_r(2);
+            die;
         // 抛出对象
         return self::$obj;
     }
@@ -44,7 +50,7 @@ class Db {
     private function connectDb() {
         if (!$this->link = @mysqli_connect($this->db_host, $this->db_user, $this->db_pwd)) {
             echo "连接mysql数据库失败";
-            exit();
+            // exit();
         }
     }
 
@@ -52,7 +58,7 @@ class Db {
     private function selectDb() {
         if (!mysqli_select_db($this->link, $this->db_name)) {
             echo "选择数据库{$this->db_name}失败";
-            die();
+            // die();
         }
     }
 

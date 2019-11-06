@@ -14,15 +14,29 @@
     <?php
     echo '快速测试PHP，Hello World<br>';
     
-    $a = 2;
+    
+    $arr = array(
+        'name' => 'zhang bo',
+        'age' => 12,
+        'sex' => '男'
+    );
+    // echo count($arr);
 
-    if ($a > 3) {
-        echo '大于3';
-    } elseif ($a > 1) {
-        echo '大于1++-';
-    } else {
-        echo 'xiao于1';
-    }
+
+    // for loop
+    for($i=0; $i<100; $i++) $res[] = sprintf('aa%02d<br>', $i);
+    echo join("<p>\n", array_map('join', array_chunk($res, 10)));
+
+
+    // echo isset($b);
+    // echo empty($a);
+    // echo empty($b);
+    // if (empty($b)) {
+    //     echo 123;
+    // }
+    
+    // unset($arr['name'], $arr['age']);
+    
    
     ?>
 </body>

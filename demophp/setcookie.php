@@ -1,7 +1,6 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +12,9 @@
 
 <body>
     <?php
-        setcookie('username','admin',time()+7*24*3600);
-        // print_r("年后$v");
+    setcookie('username', 'admin', time() + 7 * 24 * 3600);
+    // print_r("年后$v");
     ?>
 </body>
+
 </html>

@@ -24,6 +24,7 @@ final class StudentController extends BaseController {
     // 定义公共的默认方法
     public function index() {
         // $modelObj = FactoryModel::getInstance("StudentModel");
+        
         // 获取多行数据
         $arrs = $this->modelObj->fetchAll();
         $records = $this->modelObj->records();
