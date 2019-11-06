@@ -1,7 +1,9 @@
 <?php
+
 namespace Frame\Libs;
 //定义一个最终的单例的数据库操作类
-final class Db{
+final class Db
+{
 	//私有的静态的保存对象的属性
 	private static $obj = NULL;
 	//数据库配置信息
@@ -25,25 +27,24 @@ final class Db{
 	}
 
 	//私有的克隆方法：阻止类外clone对象
-	private function __clone(){}
+	private function __clone()
+	{ }
 
 	//公共的静态的创建对象的方法
 	public static function getInstance()
 	{
 		//如果对象存在，直接返回
-		if(!self::$obj instanceof self)
-		{
+		if (!self::$obj instanceof self) {
 			//如果对象不存在，创建对象
 			self::$obj = new self();
 		}
-		return self::$obj;//返回对象
+		return self::$obj; //返回对象
 	}
 
 	//私有的连接数据库的方法
 	private function connMySQL()
 	{
-		if(!$link = @mysql_connect($this->db_host,$this->db_user,$this->db_pass))
-		{
+		if (!$link = @mysql_connect($this->db_host, $this->db_user, $this->db_pass)) {
 			exit("PHP连接MySQL服务器失败！");
 		}
 	}
@@ -51,8 +52,7 @@ final class Db{
 	//私有的选择数据库的方法
 	private function selectDb()
 	{
-		if(!mysql_select_db($this->db_name))
-		{
+		if (!mysql_select_db($this->db_name)) {
 			exit("选择数据库{$this->db_name}失败！");
 		}
 	}
@@ -69,8 +69,7 @@ final class Db{
 		//转成全小写
 		$sql = strtolower($sql);
 		//如果是SELECT语句，则中止
-		if(substr($sql,0,6)=="select")
-		{
+		if (substr($sql, 0, 6) == "select") {
 			exit("SELECT语句请调用其它方法！");
 		}
 		//返回执行的结果
@@ -83,8 +82,7 @@ final class Db{
 		//转成全小写
 		$sql = strtolower($sql);
 		//如果不是SELECT语句，则中止
-		if(substr($sql,0,6)!="select")
-		{
+		if (substr($sql, 0, 6) != "select") {
 			exit("非SELECT语句请调用其它方法！");
 		}
 		//返回执行的结果
@@ -92,7 +90,7 @@ final class Db{
 	}
 
 	//公共的返回多行记录
-	public function fetchAll($sql,$type=3)
+	public function fetchAll($sql, $type = 3)
 	{
 		//定义常量数组
 		$types = array(
@@ -105,8 +103,7 @@ final class Db{
 		$result = $this->query($sql);
 
 		//循环取出结果集中的多行记录，并构建二维数组
-		while($row = mysql_fetch_array($result,$types[$type]))
-		{
+		while ($row = mysql_fetch_array($result, $types[$type])) {
 			$arr[] = $row;
 		}
 
@@ -114,7 +111,7 @@ final class Db{
 	}
 
 	//公共的获取一条记录的方法
-	public function fetchOne($sql,$type=3)
+	public function fetchOne($sql, $type = 3)
 	{
 		//定义常量数组
 		$types = array(
@@ -122,12 +119,12 @@ final class Db{
 			2 => MYSQL_BOTH,
 			3 => MYSQL_ASSOC
 		);
-		
+
 		//执行SQL语句，返回结果集
 		$result = $this->query($sql);
-		
+
 		//返回结果(一维数组)
-		return mysql_fetch_array($result,$types[$type]);
+		return mysql_fetch_array($result, $types[$type]);
 	}
 
 	//获取总记录数
@@ -145,5 +142,3 @@ final class Db{
 		mysql_close();
 	}
 }
-
-?>
