@@ -4,8 +4,13 @@
 	//执行查询的SQL语句
 	$sql = "SELECT * FROM student ORDER BY id ASC";
 	$result = mysqli_query($link, $sql);
+	// 此时result是一个结果集对象
+	print_r($result);
+	// die;
 	//获取所有行数据
 	$arrs = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	// print_r($arrs);
+	echo ($arrs);
 
 	//获取学生人数
 	$records = mysqli_num_rows($result);
@@ -37,8 +42,7 @@
 		<a href="./add.php">添加学生</a>
 		共有<font color="red"><?php echo $records; ?></font>个学生信息
 	</div>
-	<table width="600" border="1" align="center" rules="all" cellpadding="5">
-	<!-- rules="all" -->
+	<table width="700" border="1" align="center" rules="all" cellpadding="5">
 		<tr bgcolor="#ccc">
 			<th>编号</th>
 			<th>姓名</th>
@@ -53,9 +57,9 @@
 		</tr>
 		
 		<?php
-		// 循环二维数组
-		foreach ($arrs as $arr) {
-			?>
+			// 循环二维数组
+			foreach ($arrs as $arr) {
+		?>
 		<tr align="center">
 			<td><?php echo $arr['id'] ?></td>
 			<td><?php echo $arr['name'] ?></td>
