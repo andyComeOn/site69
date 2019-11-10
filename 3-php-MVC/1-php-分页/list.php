@@ -133,9 +133,9 @@ $arrs = mysqli_fetch_all($result, MYSQLI_ASSOC);
 		$('#pageselect').on('change', function(params) {
 			console.log($("#pageselect").val());
 			var v = $("#pageselect").val();
-			// http: //www.php69.com:81/3-php-MVC/1-php-%E5%88%86%E9%A1%B5/list.php
+			// http: //www.php69.com:81/3-php-MVC/1-php-%E5%88%86%E9%A1%B5/list.php 4
 			var _url = window.location.href.split('?')[0];
-			window.location.href = _url + '?pagesize=' + v;
+			window.location.href = _url + '?pagesize=' + v;   
 
 
 		});
