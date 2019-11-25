@@ -97,7 +97,6 @@ if (isset($_POST['token']) && $_POST['token'] == "add") {
 					<input type="checkbox" name="hobby[]" value="爬山">爬山
 					<input type="checkbox" name="hobby[]" value="看电影">看电影
 					<input type="checkbox" name="hobby[]" value="游泳">游泳
-				
 				</td>
 			</tr>
 			<tr>

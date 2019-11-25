@@ -8,16 +8,19 @@
     <link rel="shortcut icon" href="http://139.199.23.2/img/favicon/sql.png">
 
     <title>demo</title>
-
+    <style>
+        
+    </style>
 </head>
-
-
-
-
 
 <body>
     <div class="wrap" style="margin: 10px auto;">
-        欢迎你，<?php echo $arr['name'] ?>，你今年是<?php echo $arr['age']; ?>岁了吗？
+        欢迎你
+
+        <?php 
+            echo __DIR__;
+        
+        ?>
     </div>
 </body>
 

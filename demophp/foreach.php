@@ -13,16 +13,16 @@
 <body>
     <?php
     echo '<img src="http://139.199.23.2/img/favicon/study.png"/><br>';
+    // 循环从第二个开始
     $arr = array(120, 121, 122);
+    $str = '';
     foreach ($arr as $i => $v) {
-        if ($i == 1) {
-            echo '第' . ($i + 1) . "个特殊的值是{$v}<br>";
-            continue;
+        if ($i > 0) {
+            $str .= '<p>' . $v . '</p>';
         }
-        echo '第' . ($i + 1) . "个值是{$v}<br>";
     }
-
-
+    echo $str;
+    echo '<hr>';
 
     $arr1 = array(
         'one' => array('name' => '张三', 'age' => '23', 'sex' => '男'),
@@ -34,7 +34,7 @@
     foreach ($arr1 as $k => $val) {
         echo '<p>' . $val['name'] . $val['age'] . $val['sex'] . "</p><br>";
     }
-    
+
     // echo '<tr>' . 
     //     '<td>' . $arr['id'] . '</td>' .
     //     '<td>' . $arr['name'] . '</td>' . 
