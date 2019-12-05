@@ -13,12 +13,21 @@
 
 <body>
     <?php
-       
-        $arrs = array('andy', 'jim', 'tom');
-        print_r($arrs);
-        foreach($arrs as $v) {
-            echo $v . '<br>';
-        }
+        // 关联数组索引要用引号包裹。
+        $arrs = array( 
+            'name' => 'andy',
+            'age' => 14
+        );
+        
+        echo '<br>';
+        $a = 2;
+
+        echo "{$arrs['age']}";  // 14
+        echo '<br>';      
+        echo '{$arrs["age"]}'; // {$arrs["age"]}
+        echo '<br>';
+        echo '{$a}'; // {$a}
+        // 该例子说明了，单引号不能引入变量。
     ?>
 </body>
 </html>
