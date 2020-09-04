@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" type="" href="http://139.199.23.2/img/favicon/study.png" />
+    <!-- <link rel="shortcut icon" type="" href="http://139.199.23.2/img/favicon/study.png" /> -->
     <title>PHP的form测试</title>
 
 </head>
@@ -13,33 +13,36 @@
 <body>
     <?php
     if (isset($_POST) && !empty($_POST)) {
-        print_r($_POST);
+        // print_r($_POST);
     }
 
     echo '--';
 
     if (isset($_GET) && !empty($_GET)) {
-        print_r($_GET);
+        // print_r($_GET);
     }
 
     $arr = array(0 => 123);
-    print empty($arr);
+    // print empty($arr);
 
     ?>
 
 
     <h3>快速测试PHP</h3>
-
-    <!-- Content-Type: application/x-www-form-urlencoded -->
-    <!-- enctype="application/x-www-form-urlencoded" -->
-    <!-- enctype="application/form-data" -->
     <form method="post" action="" enctype="multipart/form-data">
-        <div> <input name="username" type="text" value="" autocomplete="off"/> </div>
-        <div>
+        <!-- <div> <input name="username" type="text" value="张波" autocomplete="off"> </div> -->
+        <!-- <div> <input name="password" type="text" value="123456 " autocomplete="off"> </div> -->
+        <div> <input name="f" type="file"> </div>
+        <!-- <div>
             <input name="hobby[]" type="checkbox" value="读书" /> 读书
             <input name="hobby[]" type="checkbox" value="看报" /> 看报
             <input name="hobby[]" type="checkbox" value="游泳" /> 游泳
-        </div>
+        </div> -->
+        <!-- <div>
+            <input name="hobby[]" type="checkbox" value="读书" /> 读书
+            <input name="hobby[]" type="checkbox" value="看报" /> 看报
+            <input name="hobby[]" type="checkbox" value="游泳" /> 游泳
+        </div> -->
         <div> <input type="submit" /> </div>
     </form>
 
