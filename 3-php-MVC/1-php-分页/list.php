@@ -24,6 +24,11 @@ $sql .= " LIMIT {$startrow}, {$pagesize}";
 
 $result = mysqli_query($link, $sql);
 
+// select * from think_user where id=? AND status=?", [37, 37]
+$tmp_sql = "SELECT * FROM student where id=37 AND age=37";
+$tmp_result = mysqli_query($link, $tmp_sql);
+print_r($tmp_result);
+// print_r(123);
 //获取所有行数据
 $arrs = mysqli_fetch_all($result, MYSQLI_ASSOC);
 // print_r($arrs);

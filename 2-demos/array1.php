@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" type="" href="http://139.199.23.2/img/favicon/study.png" />
     <title>php数组</title>
 
 </head>
@@ -14,19 +13,19 @@
 <body>
     <?php
         // 关联数组索引要用引号包裹。
+        // $arrs = ['1-1', '2-2'];
+        
+        // unset($arrs['1-1']);
+
         $arrs = array( 
             'name' => 'andy',
             'age' => 14
         );
+        // $arrs = ['a', 'b'];
+        unset($arrs['name']);
         
-        echo '<br>';
-        $a = 2;
 
-        echo "{$arrs['age']}";  // 14
-        echo '<br>';      
-        echo '{$arrs["age"]}'; // {$arrs["age"]}
-        echo '<br>';
-        echo '{$a}'; // {$a}
+        print_r($arrs);
         // 该例子说明了，单引号不能引入变量。
     ?>
 </body>

@@ -25,12 +25,16 @@
     $arr = array(0 => 123);
     print empty($arr);
 
-
     ?>
 
+
     <h3>快速测试PHP</h3>
-    <form method="post" action="">
-        <div> <input name="username" type="text" value="" /> </div>
+
+    <!-- Content-Type: application/x-www-form-urlencoded -->
+    <!-- enctype="application/x-www-form-urlencoded" -->
+    <!-- enctype="application/form-data" -->
+    <form method="post" action="" enctype="multipart/form-data">
+        <div> <input name="username" type="text" value="" autocomplete="off"/> </div>
         <div>
             <input name="hobby[]" type="checkbox" value="读书" /> 读书
             <input name="hobby[]" type="checkbox" value="看报" /> 看报
@@ -38,6 +42,14 @@
         </div>
         <div> <input type="submit" /> </div>
     </form>
+
+
+    <!-- <form action="/xxxx" method="post" enctype="application/x-www-form-urlencoded">
+        username: <input type="text" name="username"><br>
+        password: <input type="text" name="password"><br>
+        <input type="submit" value="提交">
+    </form> -->
+
 </body>
 
 </html>
